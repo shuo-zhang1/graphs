@@ -92,10 +92,10 @@ map<Node *, int> dijkstras(Node *start)
     return dist;
 }
 
-void print(WeightedGraph g)
+void print(WeightedGraph graph)
 {
     int i = 0;
-    vector<Node *> allnodes = g.getAllNodes();
+    vector<Node *> allnodes = graph.getAllNodes();
     for (Node *node : allnodes)
     {
         cout << node->value << ": [";
