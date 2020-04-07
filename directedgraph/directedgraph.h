@@ -1,5 +1,5 @@
-#ifndef _GRAPH_H_
-#define _GRAPH_H_
+#ifndef _DIRECTED_GRAPH_H_
+#define _DIRECTED_GRAPH_H_
 
 #include <string>
 #include <map>
