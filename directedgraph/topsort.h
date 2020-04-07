@@ -1,5 +1,5 @@
-#ifndef _GRAPH_SEARCH_H_
-#define _GRAPH_SEARCH_H_
+#ifndef _TOP_SORT_H_
+#define _TOP_SORT_H_
 
 #include <vector>
 #include <queue>
