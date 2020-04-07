@@ -82,27 +82,5 @@ int main()
     mDFSOutput = search.mDFS(gsmall);
     cout << "mDFSOutput: ";
     printTraversal(mDFSOutput);
-    /*
-    Node *target = new Node("9");
-    vector<Node *> DFSOutput;
-    DFSOutput = search.DFSRec(gsmall, allNodes1[0], target);
-    cout << "DFSRec from 0 to 9" << endl;
-    printTraversal(DFSOutput);
-    DFSOutput = search.DFSIter(gsmall, allNodes1[0], target);
-    cout << "DFSIter from 0 to 9" << endl;
-    printTraversal(DFSOutput);
-    vector<Node *> BFTOutput;
-    BFTOutput = search.BFTRec(gsmall);
-    cout << "BFTRec" << endl;
-    printTraversal(BFTOutput);
-
-    BFTOutput = search.BFTIter(gsmall);
-    cout << "BFTIter" << endl;
-    printTraversal(BFTOutput);
-
-    DirectedGraph tenk = createLinkedList(10000);
-    BFTRecLinkedList(tenk);
-    BFTIterLinkedList(tenk);
-*/
     return 0;
 }
