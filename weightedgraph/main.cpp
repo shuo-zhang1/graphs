@@ -11,12 +11,14 @@ using namespace std;
 WeightedGraph createRandomCompleteWeightedGraph(int n)
 {
     WeightedGraph graph;
+    srand(time(0));
     for (int i = 0; i < n; i++)
     {
-        graph.addNode(to_string(i));
+        int tempval = rand() % 100;
+        graph.addNode(to_string(tempval));
     }
     vector<Node *> graphNodes = graph.getAllNodes();
-    srand(time(0));
+ 
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = i + 1; j < n; j++)
