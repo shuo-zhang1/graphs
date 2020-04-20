@@ -8,14 +8,14 @@ using namespace std;
 
 Graph createRandomUnweightedGraphIter(int n)
 {
+    srand(time(0));
     Graph graph;
     for (int i = 0; i < n; i++)
     {
+        int tempval = rand() % 100;
         graph.addNode(to_string(i));
     }
-
     vector<Node *> graphNodes = graph.getAllNodes();
-    srand(time(0));
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = i + 1; j < n; j++)
