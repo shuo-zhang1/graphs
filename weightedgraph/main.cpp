@@ -15,19 +15,16 @@ WeightedGraph createRandomCompleteWeightedGraph(int n)
     {
         graph.addNode(to_string(i));
     }
-
     vector<Node *> graphNodes = graph.getAllNodes();
     srand(time(0));
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = i + 1; j < n; j++)
         {
-            int v1 = rand() % 100;
-            if (v1 < 30){
-                graph.addWeightedEdge(graphNodes[i], graphNodes[j], v1);
-                
-            }
-            
+            int edgeWeight = rand() % 100;
+            if (edgeWeight < 30){
+                graph.addWeightedEdge(graphNodes[i], graphNodes[j], edgeWeight); 
+            } 
         }
     }
     return graph;
