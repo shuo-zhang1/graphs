@@ -2,7 +2,6 @@
 #include <time.h>
 #include <stdlib.h>
 #include <limits>
-#include <algorithm>
 #include <unordered_set>
 #include "gridgraph.h"
 
@@ -48,7 +47,7 @@ int manhattan(Node *curr, Node *dest)
     return (abs(curr->x - dest->x) + abs(curr->y - dest->y));
 }
 
-Node *minDistance(map<Node *, pair<int, int>> distances, unordered_set<Node *> &visited)
+Node *minDistance(unordered_map<Node *, pair<int, int>> distances, unordered_set<Node *> &visited)
 {
     Node *temp = NULL;
     int tempdist = numeric_limits<int>::max();
@@ -66,9 +65,9 @@ Node *minDistance(map<Node *, pair<int, int>> distances, unordered_set<Node *> &
     return temp;
 }
 
-map<Node *, pair<int, int>> astar(Node *sourceNode, Node *destNode)
+unordered_map<Node *, pair<int, int>> astar(Node *sourceNode, Node *destNode)
 {
-    map<Node *, pair<int, int>> distances;
+    unordered_map<Node *, pair<int, int>> distances;
     Node *curr = sourceNode;
     distances[sourceNode] = make_pair(0, manhattan(curr, destNode));
     unordered_set<Node *> visited;
@@ -121,7 +120,7 @@ int main()
     cout << "A* star from start node to each node: " << endl;
     Node *source = allNodes[0];
     Node *dest = allNodes[allNodes.size() - 1];
-    map<Node *, pair<int, int>> star = astar(source, dest);
+    unordered_map<Node *, pair<int, int>> star = astar(source, dest);
     for (auto i : star)
     {
         cout << i.first->value << ": " << i.second.first << endl;
