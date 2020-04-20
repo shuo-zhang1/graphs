@@ -63,7 +63,6 @@ void printTraversal(vector<Node *> allnodes)
 
 int main()
 {
-    
     DirectedGraph gsmall = createRandomDAGIter(10);
     vector<Node *> allNodes1 = gsmall.getAllNodes();
     print(allNodes1);
