@@ -9,11 +9,16 @@ void DirectedGraph::addNode(string nodeVal)
 
 void DirectedGraph::addDirectedEdge(Node *first, Node *second)
 {
-    first->neighbors.push_back(second);
+    if(find(first->neighbors.begin(), first->neighbors.begin(), second) == first->neighbors.end()){
+        first->neighbors.push_back(second);
+    }
 }
 
 void DirectedGraph::removeDirectedEdge(Node *first, Node *second)
 {
+    if(first->neighbors.empty()){
+        return;
+    }
     for (Node *curr : allnodes)
     {
         if (curr->value == first->value)
