@@ -20,8 +20,8 @@ DirectedGraph createRandomDAGIter(int n)
     {
         for (int j = i + 1; j < n; j++)
         {
-            int v1 = rand() % 100;
-            if(v1 < 40)
+            int edgechance = rand() % 100;
+            if(edgechance < 50)
             {
                 graph.addDirectedEdge(graphNodes[i], graphNodes[j]);
             }
