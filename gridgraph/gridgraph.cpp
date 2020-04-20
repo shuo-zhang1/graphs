@@ -4,6 +4,9 @@
 void GridGraph::addGridNode(int x, int y, string nodeVal)
 {
     Node *temp = new Node(x, y, nodeVal);
+    if(find(allnodes.begin(), allnodes.end(), temp) == allnodes.end()){
+       allnodes.push_back(temp); 
+    }
     allnodes.push_back(temp);
 }
 
