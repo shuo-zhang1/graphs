@@ -48,7 +48,7 @@ WeightedGraph createLinkedList(int n)
     return graph;
 }
 
-Node *minDist(map<Node *, int> dist, unordered_set<Node *> visited)
+Node *minDist(unordered_map<Node *, int> dist, unordered_set<Node *> visited)
 {
     Node *minNode = NULL;
     int minDist = numeric_limits<int>::max();
@@ -63,9 +63,9 @@ Node *minDist(map<Node *, int> dist, unordered_set<Node *> visited)
     return minNode;
 }
 
-map<Node *, int> dijkstras(Node *start)
+unordered_map<Node *, int> dijkstras(Node *start)
 {
-    map<Node *, int> dist;
+    unordered_map<Node *, int> dist;
     dist[start] = 0;
     Node *curr = start;
     unordered_set<Node *> visited;
@@ -137,7 +137,7 @@ int main()
     cout << "Removing edge between 2 and 8" << endl;
     print(gsmall);
     WeightedGraph search;
-    map<Node *, int> dijk = dijkstras(allNodes1[0]);
+    unordered_map<Node *, int> dijk = dijkstras(allNodes1[0]);
     for (pair<Node*, int> node : dijk)
     {
         cout << "From start to " << node.first->value << ": " << node.second << endl;
