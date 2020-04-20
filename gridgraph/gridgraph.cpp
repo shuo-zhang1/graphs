@@ -51,3 +51,4 @@ void GridGraph::removeUndirectedEdge(Node *first, Node *second)
         }
     }
 }
+
