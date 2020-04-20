@@ -3,7 +3,7 @@
 
 void GraphSearch::DFSUtil(vector<Node *> &output, Node *current, Node *goal, bool &found)
 {
-    if (found == false)
+    if (!found)
     {
         current->visited = true;
         output.push_back(current);
@@ -76,7 +76,6 @@ vector<Node *> GraphSearch::BFTIter(Graph &graph)
     for( Node* node: nodelist){
         node->visited= false;
     }
-
     for (Node *node : nodelist)
     {
         if (!node->visited)
