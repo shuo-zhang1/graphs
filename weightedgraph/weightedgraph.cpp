@@ -4,7 +4,9 @@
 void WeightedGraph::addNode(string nodeVal)
 {
     Node *temp = new Node(nodeVal);
-    allnodes.push_back(temp);
+    if(find(allnodes.begin(), allnodes.end(), temp) == allnodes.end()){
+       allnodes.push_back(temp); 
+    }
 }
 
 void WeightedGraph::addWeightedEdge(Node *first, Node *second, int edgeWeight)
@@ -14,18 +16,19 @@ void WeightedGraph::addWeightedEdge(Node *first, Node *second, int edgeWeight)
 
 void WeightedGraph::removeDirectedEdge(Node *first, Node *second)
 {
+    if(first->neighbors.empty()){
+        return;
+    }
     for (Node *curr : allnodes)
     {
         if (curr->value == first->value)
         {
-            int i = 0;
             for (pair<Node *, int> neighbor : curr->neighbors)
             {
                 if (neighbor.first->value == second->value)
                 {
                     (curr->neighbors).erase(neighbor.first);
                 }
-                i++;
             }
         }
     }
