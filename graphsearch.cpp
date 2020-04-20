@@ -44,14 +44,14 @@ vector<Node *> GraphSearch::DFSIter(Graph &graph, Node *start, Node *end)
         node->visited= false;
     }
     vector<Node *> output;
-    stack<Node *> s;
+    stack<Node *> nodestack;
     start->visited = true;
-    s.push(start);
-    while (!s.empty())
+    nodestack.push(start);
+    while (!nodestack.empty())
     {
-        Node *newCurr = s.top();
+        Node *newCurr = nodestack.top();
         output.push_back(newCurr);
-        s.pop();
+        nodestack.pop();
         if (newCurr->value == end->value)
         {
             return output;
@@ -61,7 +61,7 @@ vector<Node *> GraphSearch::DFSIter(Graph &graph, Node *start, Node *end)
             if (!v->visited)
             {
                 v->visited = true;
-                s.push(v);
+                nodestack.push(v);
             }
         }
     }
@@ -76,6 +76,7 @@ vector<Node *> GraphSearch::BFTIter(Graph &graph)
     for( Node* node: nodelist){
         node->visited= false;
     }
+
     for (Node *node : nodelist)
     {
         if (!node->visited)
