@@ -2,7 +2,8 @@
 #define _GRAPH_H_
 
 #include <string>
-#include <map>
+#include <unordered_map>
+#include <algorithm>
 #include <vector>
 
 using namespace std;
@@ -10,7 +11,7 @@ using namespace std;
 struct Node
 {
     string value;
-    map<Node *, int> neighbors;
+    unordered_map<Node *, int> neighbors;
     bool visited;
     Node(string val = "")
     {
