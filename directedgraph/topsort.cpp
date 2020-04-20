@@ -7,7 +7,7 @@ vector<Node *> TopSort::Kahns(DirectedGraph &graph)
     vector<Node *> output;
     queue<Node *> q;
     int v = nodelist.size();
-    map<Node *, int> inDeg;
+    unordered_map<Node *, int> inDeg;
 
     for (Node *node : nodelist)
     {
